@@ -75,7 +75,7 @@ class WebAppInterface(private val context: Context, private val service: Floatin
     fun getInstalledApps(): String {
         val pm = context.packageManager
         val intent = Intent(Intent.ACTION_MAIN, null).apply {
-            addCategory(Intent.category.LAUNCHER)
+            addCategory(Intent.CATEGORY_LAUNCHER)
         }
         val apps = pm.queryIntentActivities(intent, 0)
         val jsonArray = JSONArray()
