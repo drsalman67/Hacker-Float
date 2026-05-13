@@ -14,7 +14,12 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
           
-      - name: Build Native APK (Using Cloud Gradle)
+      - name: Setup Compatible Gradle 8.4
+        uses: gradle/actions/setup-gradle@v3
+        with:
+          gradle-version: '8.4'
+          
+      - name: Build Native APK (Using Fixed Gradle)
         run: gradle assembleDebug
         
       - name: Upload Akira APK
